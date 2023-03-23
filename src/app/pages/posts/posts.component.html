@@ -1,0 +1,15 @@
+<p>posts works!</p>
+<h1>POSTS</h1>
+
+<!-- [IMPORTANT] This is how you crate an array in execution time -->
+<ul class="list-group">
+  <!-- [IMPORTANT] We call the private var from the posts.component.ts -->
+  <!-- [IMPORTATN] remember to use the PIPE of angular/ionic ..  | ASYNC  -->
+  <!-- <li *ngFor="let post of messages | async" class="list-group-item">
+    <h2>{{post.title}}</h2>
+    <p>{{post.body}}</p>
+    <app-post></app-post>
+  </li> -->
+  <!-- [IMPORTANT] This is how to pass var from parent to children -->
+  <app-post *ngFor="let post of messages | async" [post_rename]="post" (clickPost)="listenChild( $event )"></app-post>
+</ul>
